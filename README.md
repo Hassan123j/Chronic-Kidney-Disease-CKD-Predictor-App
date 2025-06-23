@@ -1,4 +1,4 @@
-# CKD Predictor App
+# Chronic-Kidney-Disease-CKD-Predictor-App
 
 This is a simple Streamlit app that predicts Chronic Kidney Disease (CKD) based on patient data. It uses a Gradient Boosting model trained on a dataset of clinical records.
 
