@@ -1,45 +1,54 @@
-# Chronic-Kidney-Disease-CKD-Predictor-App
+# CKD Predictor – Chronic Kidney Disease Prediction App
 
-This is a simple Streamlit app that predicts Chronic Kidney Disease (CKD) based on patient data. It uses a Gradient Boosting model trained on a dataset of clinical records.
+This is a small Streamlit app I built that predicts whether someone might have Chronic Kidney Disease (CKD) based on basic clinical info. It uses a machine learning model trained on real-world patient data.
 
-## What’s inside
+## Demo
 
-- A trained model (`model_gbc.pkl`) and scaler (`scaler.pkl`)
-- Streamlit frontend to input patient data and get predictions
-- A Jupyter notebook that walks through the full ML pipeline (data cleaning, training, evaluation)
-- Dataset: `kidney_disease.csv`
+Here’s a quick demo and explanation of how the app works:  
+[View the project on LinkedIn](https://www.linkedin.com/posts/hassan-ahmed-ai_sharing-a-recent-project-a-ckd-predictor-activity-7343216366063120385-Um6M?utm_source=share&utm_medium=member_desktop&rcm=ACoAADcMskUBCV1EYOEZsfJd6ub2yVedI94Bhuc)
 
-## Getting started
+## What's in this repo
 
-Here’s how to run it locally:
+- `app.py` - the main Streamlit app
+- `CKD Model.ipynb` - a Jupyter notebook that walks through data cleaning, model training, and evaluation
+- `kidney_disease.csv` - the dataset I used
+- `models/` folder:
+  - `model_gbc.pkl`: the trained Gradient Boosting model
+  - `scaler.pkl`: the fitted scaler used for preprocessing
+- `requirements.txt` - list of Python packages used
 
-### 1. Clone this repo
+## How to run it locally
+
+If you want to test this on your machine:
+
+### 1. Clone the repo
 
 ```bash
 git clone https://github.com/Hassan123j/Chronic-Kidney-Disease-CKD-Predictor-App.git
 cd Chronic-Kidney-Disease-CKD-Predictor-App
-```
+````
 
-### 2. Set up a virtual environment
+### 2. Create a virtual environment
 
 ```bash
 python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
+source venv/bin/activate  # For Windows: venv\Scripts\activate
 ```
 
-### 3. Install dependencies
+### 3. Install the dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Make sure the model files are in place
+### 4. Check if the model files are there
 
-Check that `models/model_gbc.pkl` and `models/scaler.pkl` exist. If not, run the notebook to generate them:
+Make sure you have these two files in the `models/` folder:
 
-```bash
-jupyter notebook "CKD Model.ipynb"
-```
+* `model_gbc.pkl`
+* `scaler.pkl`
+
+If they’re missing, open `CKD Model.ipynb` and run the notebook to train the model and save the files.
 
 ### 5. Run the app
 
@@ -47,28 +56,40 @@ jupyter notebook "CKD Model.ipynb"
 streamlit run app.py
 ```
 
-## Folder layout
+## Features used in the prediction
 
-```
-.
-├── app.py                 # Streamlit app
-├── CKD Model.ipynb        # Model training notebook
-├── kidney_disease.csv     # Dataset
-├── requirements.txt       # Python packages
-└── models/
-    ├── model_gbc.pkl
-    └── scaler.pkl
-```
+The model uses a number of clinical features like:
+
+* Age
+* Blood Pressure
+* Specific Gravity
+* Albumin
+* Sugar
+* Hemoglobin
+* Serum Creatinine
+* Packed Cell Volume
+* and more...
+
+(You’ll see the full list in the app UI.)
 
 ## Notes
 
-- The model expects input data to be preprocessed the same way it was during training (scaling, encoding, etc.)
-- If you retrain the model, replace both `.pkl` files in the `models/` folder
+* Input data is scaled and encoded before feeding it to the model. This is the same preprocessing used during training.
+* If you retrain the model, be sure to replace both `.pkl` files in the `models/` folder with your updated ones.
 
-## Python packages used
+## Built With
 
-- streamlit
-- pandas
-- numpy
-- scikit-learn
-- joblib
+* Python
+* Streamlit
+* scikit-learn
+* pandas and numpy
+* Jupyter Notebook
+
+## License
+
+This project is MIT licensed.
+
+---
+
+If you find this useful or interesting, feel free to fork the repo or open an issue. Thanks for checking it out!
+
