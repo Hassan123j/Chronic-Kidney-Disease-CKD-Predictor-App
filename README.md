@@ -1,6 +1,8 @@
 # CKD Predictor – Chronic Kidney Disease Prediction App
 
 This is a small Streamlit app I built that predicts whether someone might have Chronic Kidney Disease (CKD) based on basic clinical info. It uses a machine learning model trained on real-world patient data.
+>⚠️**Note:** This project is only for learning and demonstration purposes. It should not be used for real medical diagnosis.
+
 
 ## Demo
 
